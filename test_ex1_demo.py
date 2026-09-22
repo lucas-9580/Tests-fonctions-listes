@@ -2,7 +2,8 @@ import pytest
 from ex1_demo import *
 
 def test_calculer_stats_valeurs():
-    resultat = calculer_stats([1, 2, 3, 4, 5])
+    liste = [1, 2, 3, 4, 5]
+    resultat = calculer_stats(liste)
     assert resultat == (1, 5, 3.0)
     assert isinstance(resultat, tuple)
 

@@ -5,19 +5,20 @@ from ex2_pratique import est_pair, note_lettre, filtrer_positifs
 
 def test_est_pair_nombre_pair():
     assert est_pair(4) == True
-
-
 def test_est_pair_nombre_impair():
     # TODO : tester un nombre impair
-
+    assert est_pair(3) == False
 
 # TODO (étudiant) : ajouter un test pour 0
-
+def test_est_paire_nombre_pare():
+    assert est_pair(0) == True
 
 # ================= ÉTAPE 2 : tests AVEC paramètres =================
 
 @pytest.mark.parametrize("note, attendu", [
     (95, "A"),
+    (89, "B"),
+    (80, "B"),
     (70, "C"),
     (50, "F"),
     # TODO (étudiant) : ajouter un cas pour la note 80 -> "B"
@@ -30,7 +31,19 @@ def test_note_lettre(note, attendu):
 
 
 # TODO : refait les tess de la fonction est_pair sous forme de test paramétré
+@pytest.mark.parametrize("nombre, attendu", [
+    (95, False),
+    (89, False),
+    (80, True),
+    (70, True),
+    (50, True),
 
+
+
+
+])
+def test_est_pair_nombres(nombre, attendu):
+    assert est_pair(nombre) == attendu
 
 
 # ================= ÉTAPE 3 : fonction plus complexe (liste) =================
